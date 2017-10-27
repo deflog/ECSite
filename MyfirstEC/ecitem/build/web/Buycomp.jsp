@@ -119,7 +119,7 @@ HttpSession hs = request.getSession(false);
             </header>
              <div class="container main-content">
                 <div class="row">
-                <form class="text-center"action="cart" method="GET">
+                <form class="text-center"action="cart" method="POST">
                     <input type="hidden" value="<%=hs.getAttribute("path")%>">
                     <input type="hidden" name="ac" value="<%=hs.getAttribute("ac")%>">
                     <button type="submit" class="btn btn-warning">Cart</button>

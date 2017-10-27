@@ -111,7 +111,7 @@ hs.getAttribute("user");
               <p>form</p>
               <p>好きなものを好きなだけ購入できる仮想ショッピングサイトです</p>
               
-              <p><form action="Searchresult" method="GET">
+              <p><form action="Searchresult" method="POST">
                   <input type="hidden" name="ac" value="<%=hs.getAttribute("ac")%>">
                   <div class="input-group">
                   <input class="form-control" type="text" name="ward"placeholder="Search">

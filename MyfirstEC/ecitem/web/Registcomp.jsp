@@ -118,7 +118,7 @@ HttpSession hs = request.getSession(false);
                 </div>
             </header>
             <h1 class="text-center">Regist Completed</h1>
-        <form class="text-center"action="<%=hs.getAttribute("path")%>" method="GET">
+        <form class="text-center"action="<%=hs.getAttribute("path")%>" method="POST">
             <input type="hidden" name="ac" value="<%=hs.getAttribute("ac")%>">
             <button type="submit" class="btn btn-default">Back</button>
         </form>

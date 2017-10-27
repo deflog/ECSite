@@ -122,32 +122,35 @@ HttpSession hs = request.getSession(false);
         <h1 class="text-center">Let's Shopping!</h1>
     
     <!--URLをうけとってactionに入れてください-->
-    <form class="text-center" action="<%=(String)hs.getAttribute("path")%>" method="GET">
+    <form class="text-center" action="<%=(String)hs.getAttribute("path")%>" method="POST">
         <input type="hidden" name="ac" value="<%=hs.getAttribute("ac")%>">
         <button type="submit" class="btn btn-default">Back</button>
     </form>
     <%}else if(ch.equals("0")){%>
     <h1 class="text-center">Can't Sign in!</h1>
-    <form class="text-center"action="Registration" method="GET">
+    <form class="text-center"action="Registration" method="POST">
         <input type="hidden" name="path" value="<%=hs.getAttribute("path")%>">
         <input type="hidden" name="ac" value="<%=hs.getAttribute("ac")%>">
         <button type="submit" class="btn btn-info">Sign UP</button>
     </form>
-    <form class="text-center" action="<%=(String)hs.getAttribute("path")%>" method="GET">
+    <form class="text-center" action="<%=(String)hs.getAttribute("path")%>" method="POST">
         <input type="hidden" name="ac" value="<%=hs.getAttribute("ac")%>">
         <button class="text-center" type="submit">Back</button>
     </form>
     <%}else{%>
     <h1 class="text-center">See you Next!</h1>
-    <form class="text-center"action="Registration" method="GET">
+    <form class="text-center"action="Registration" method="POST">
          <input type="hidden" name="path" value="<%=hs.getAttribute("path")%>">
          <input type="hidden" name="ac" value="<%=hs.getAttribute("ac")%>">
          <button type="submit" class="btn btn-info">Sign UP</button>
     </form>
-    <form class="text-center"action="<%=(String)hs.getAttribute("path")%>" method="GET">
+    <form class="text-center"action="<%=(String)hs.getAttribute("path")%>" method="POST">
         <input type="hidden" name="ac" value="<%=hs.getAttribute("ac")%>">
         <button type="submit" class="btn btn-default">Back</button>
+    </form>
     <%}%>
     </body>
-    
+     <footer class="container-fluid">
+          <small><a href="Search">Copyright (C) 2017 MAY All Rights Reserved.</a></small>
+      </footer>
 </html>

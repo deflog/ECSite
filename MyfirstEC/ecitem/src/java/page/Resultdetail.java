@@ -109,6 +109,41 @@ public class Resultdetail extends HttpServlet {
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
+        HttpSession session = request.getSession(false);
+           jums jums =new jums();
+        request.setCharacterEncoding("UTF-8");
+       String ward = request.getQueryString();
+       if(!ward.equals("")){
+       StringBuilder sb= new StringBuilder(ward);
+       ward = sb.delete(0,3).toString();
+        URL url = new URL(jums.createCode(ward));
+        
+        HttpURLConnection connection = (HttpURLConnection) url.openConnection();
+        connection.setDoOutput(true);
+        connection.setUseCaches(false);
+        connection.setRequestMethod("GET");
+        
+          BufferedReader bufferReader
+                = new BufferedReader(new InputStreamReader(connection.getInputStream(), "UTF-8"));
+        String getResponse = new String();
+        String str;
+
+        while ((str = bufferReader.readLine()) != null) {
+            getResponse = getResponse + str;
+
+        }
+        bufferReader.close();
+
+        connection.disconnect();
+
+       
+       setSyouhin syo = new setSyouhin();
+        
+        session.setAttribute("item",syo.codeSyouhin(getResponse));
+       }else{
+       request.setAttribute("error","セッションがありません");
+       request.getRequestDispatcher("/error.jsp").forward(request, response);
+       }
         processRequest(request, response);
     }
 

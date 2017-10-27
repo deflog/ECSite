@@ -130,6 +130,48 @@ public class Searchresult extends HttpServlet {
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
+            jums jums =new jums();
+        HttpSession session = request.getSession(false);
+        request.setCharacterEncoding("UTF-8");
+        String ward = request.getParameter("ward");
+      
+        if(ward==null&&session.getAttribute("syo")!=null){
+            
+            System.out.print("検索結果をもう一度");
+        }else if(!ward.equals("")){
+        
+         
+        
+        URL url = new URL(jums.createUrl(ward));
+        
+        HttpURLConnection connection = (HttpURLConnection) url.openConnection();
+        connection.setDoOutput(true);
+        connection.setUseCaches(false);
+        connection.setRequestMethod("GET");
+        
+          BufferedReader bufferReader
+                = new BufferedReader(new InputStreamReader(connection.getInputStream(), "UTF-8"));
+        String getResponse = new String();
+        String str;
+
+        while ((str = bufferReader.readLine()) != null) {
+            getResponse = getResponse + str;
+
+        }
+        bufferReader.close();
+
+        connection.disconnect();
+
+        
+        
+       setSyouhin syo = new setSyouhin();
+        
+        session.setAttribute("syo",syo.setSyouhin(getResponse));
+        }else{
+        request.setAttribute("error","キーワードを入力してください。");
+        request.getRequestDispatcher("Search").forward(request, response);
+        }
+        
         try {
             processRequest(request, response);
         } catch (Exception ex) {

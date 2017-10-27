@@ -120,7 +120,7 @@ HttpSession hs = request.getSession(false);
              
               <p>好きなものを好きなだけ購入できる仮想ショッピングサイトです</p>
               
-              <p><form action="Searchresult" method="GET">
+              <p><form action="Searchresult" method="POST">
                   <input type="hidden" name="ac" value="<%=hs.getAttribute("ac")%>">
                   <div class="input-group">
                   <input class="form-control" type="text" name="ward"placeholder="Search">
@@ -141,7 +141,7 @@ HttpSession hs = request.getSession(false);
                 <div class="row">
                   <h1 class="text-center">Success</h1>
                      <div class="text-center">
-                       <form action="Searchresult" method="GET">
+                       <form action="Searchresult" method="POST">
                        <input type="hidden" name="ac" value="<%=hs.getAttribute("ac")%>">
                        <button type="submit" class="btn btn-default">Result</button>
                        </form>
