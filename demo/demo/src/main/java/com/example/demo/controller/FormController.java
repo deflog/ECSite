@@ -45,6 +45,7 @@ public class FormController {
 		model.addAttribute("count",count);
 		model.addAttribute("bl",bl);
 		model.addAttribute("selectedValue",selectedValue);
+
 		String resultsnum = gss.resultNumber(gss.resultnum(gss.service(selectedValue, count, selectedSA)));
 		if(Integer.parseInt(resultsnum) ==0) {
 			return "error";
@@ -59,8 +60,9 @@ public class FormController {
 		return "Formresult";
 	}
 	@RequestMapping(value = "/Resultdetail",method = RequestMethod.GET)
-	public String Resultdetail(@RequestParam String id,@RequestParam String selectedValue,Model model) throws JsonParseException, JsonMappingException, IOException{
+	public String Resultdetail(@RequestParam String id,@RequestParam String selectedValue,@RequestParam String selectedSA,Model model) throws JsonParseException, JsonMappingException, IOException{
 		model.addAttribute("selectedValue",selectedValue);
+		model.addAttribute("selectedSA",selectedSA);
 		model.addAttribute("result",gss.RestDetail(gss.jsonservice(gss.Idservice(id))));
 
 		return "Resultdetail";

@@ -1,23 +1,28 @@
 @charset "UTF-8";
- html {
+html {
   min-height: 100%;
   position: relative;
+
 }
+
+
+
 
 body {
-  margin-bottom: 5em;
+  margin-bottom:60px;
+
 }
 
-footer {
-	width: 1366px;
-	margin-right: auto;
-	margin-left: auto;
-  bottom: 0;
-  height: 5em;
-  position: absolute;
-  text-align: center;
-  background: #101010;
+.footer{
+	position: absolute;
+	bottom: 0;
+	width: 100%;
+	height: 60px;
+	background-color: #101010;
+	text-align: center;
 }
+
+
 
   	.square_btn{
     display: inline-block;

@@ -29,8 +29,8 @@
 			<th>wifi</th>
 		</tr>
 		<tr th:each="element : ${result}">
-			<td><a th:href="@{/Resultdetail(selectedValue=${selectedValue},id=${element.getId()})}"><img th:src="*{element.getPhoto()}"/></a></td>
-			<td><a th:href="@{/Resultdetail(selectedValue=${selectedValue},id=${element.getId()})}" th:text="*{element.getName()}"></a></td>
+			<td><a th:href="@{/Resultdetail(selectedValue=${selectedValue},selectedSA=${selectedSA},id=${element.getId()})}"><img th:src="*{element.getPhoto()}"/></a></td>
+			<td><a th:href="@{/Resultdetail(selectedValue=${selectedValue},id=${element.getId()},selectedSA=${selectedSA})}" th:text="*{element.getName()}"></a></td>
 			<td th:text="*{element.getOpen()}"></td>
 			<td th:text="*{element.getWifi()}"></td>
 		</tr>
