@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html xmlns="http://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8"/>
+ <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <link href="/bootstrap/css/bootstrap.min.css" th:href="@{/bootstrap/css/bootstrap.min.css}" rel="stylesheet" />
+    <link href="/css/common.css" th:href="@{/css/common.css}" rel="stylesheet" />
+<style>
+ div.jumbotron{
+  	background:url("image/pp_mentai_TP_V1.jpg");
+  	background-position:center center;
+  	background-size: cover;
+
+  	}
+</style>
+<title>resultdetail</title>
+</head>
+<body>
+<div th:replace="comhead :: header"></div>
+	<div class="container">
+	<table>
+		<tr  th:each="element : ${result}">
+			<td><a th:href="*{element.getUrl()}"><img th:src="*{element.getPhoto()}"/></a></td>
+				<td>
+				<table>
+					<tr>
+						<td><a th:href="*{element.getUrl()}" th:text="*{element.getName()}"></a></td>
+					</tr>
+					<tr>
+						<th>住所</th>
+						<td th:text="*{element.getAddress()}"></td>
+					</tr>
+					<tr>
+						<th>アクセス</th>
+						<td th:text="*{element.getMobile_access()}"></td>
+					</tr>
+					<tr>
+						<th>備考</th>
+						<td th:text="*{element.getShop_detail_memo()}"></td>
+					</tr>
+					<tr>
+									<th>カード払い</th>
+									<td th:text="*{element.getCard()}"></td>
+								</tr>
+								<tr>
+									<th>コース</th>
+									<td th:text="*{element.getCourse()}"></td>
+								</tr>
+								<tr>
+									<th>フリードリンク</th>
+									<td th:text="*{element.getFree_drink()}"></td>
+								</tr>
+								<tr>
+									<th>掘り炬燵</th>
+									<td th:text="*{element.getHorigotatsu()}"></td>
+								</tr>
+								<tr>
+									<th>タバコ</th>
+									<td th:text="*{element.getNon_smoking()}"></td>
+								</tr>
+								<tr>
+									<th>駐車場</th>
+									<td th:text="*{element.getParking()}"></td>
+								</tr>
+								<tr>
+									<th>許容人数</th>
+									<td th:text="*{element.getParty_capacity()}"></td>
+								</tr>
+								<tr>
+									<th>ショー</th>
+									<td th:text="*{element.getShow()}"></td>
+								</tr>
+								<tr>
+									<th>wifi</th>
+									<td th:text="*{element.getWifi()}"></td>
+								</tr>
+								<tr>
+									<th>チャーター</th>
+									<td th:text="*{element.getCharter()}"></td>
+								</tr>
+
+
+
+				</table>
+				</td>
+			</tr>
+	</table>
+
+	<a th:href="@{/Formresult(selectedValue=${selectedValue})}">Formresult</a>
+	</div>
+	<div th:replace="comhead :: footer"></div>
+
+</body>
+</html>

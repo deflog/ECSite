@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html xmlns="http://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8"/>
+ <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <link href="/bootstrap/css/bootstrap.min.css" th:href="@{/bootstrap/css/bootstrap.min.css}" rel="stylesheet" />
+    <link href="/css/common.css" th:href="@{/css/common.css}" rel="stylesheet" />
+<style>
+ div.jumbotron{
+  	background:url("image/pp_mentai_TP_V1.jpg");
+  	background-position:center center;
+  	background-size: cover;
+
+  	}
+</style>
+<title>error</title>
+</head>
+<body>
+<div th:replace="comhead :: header"></div>
+<div class="container">
+<h1>登録された店舗がありません</h1>
+<a href="Form">トップに戻る</a>
+</div>
+<div th:replace="comhead :: footer"></div>
+</body>
+</html>
