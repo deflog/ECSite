@@ -1,4 +1,4 @@
-/*
+﻿/*
  * To change this license header, choose License Headers in Project Properties.
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
@@ -13,7 +13,7 @@ public class jums{
         /**
      * Yahoo!ディベロッパーのAPP ID
      */
-    private static String APPID = "dj00aiZpPU5mNmR6aW1VSFdyOSZzPWNvbnN1bWVyc2VjcmV0Jng9ZDQ-";
+    private static String APPID = "app ID";
 
     /**
      * Yahoo!ショッピングAPIのベースURI

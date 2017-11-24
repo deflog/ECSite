@@ -19,13 +19,13 @@ public class GetSampleService {
 
 	public String service(String type,String count,String sa) throws URISyntaxException{
 		//URI uri = new URI("http://webservice.recruit.co.jp/hotpepper/gourmet/v1/?key=cab9b7edab23bec4&format=json&genre={type}") ;
-		String uri = "http://webservice.recruit.co.jp/hotpepper/gourmet/v1/?key=cab9b7edab23bec4&format=json&genre={type}&start="+count+"&service_area="+sa;
+		String uri = "http://webservice.recruit.co.jp/hotpepper/gourmet/v1/?key="access key"&format=json&genre={type}&start="+count+"&service_area="+sa;
 		String s = new RestTemplate().getForObject(uri,String.class,type);
 
 		return s;
 	}
 	public String Idservice(String type) {
-		String uri = "http://webservice.recruit.co.jp/hotpepper/gourmet/v1/?key=cab9b7edab23bec4&format=json&id={type}";
+		String uri = "http://webservice.recruit.co.jp/hotpepper/gourmet/v1/?key="access key"&format=json&id={type}";
 		String s = new RestTemplate().getForObject(uri,String.class,type);
 		return s;
 	}
